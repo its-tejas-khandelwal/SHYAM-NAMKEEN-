@@ -24,22 +24,27 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         h1, h2, h3 { font-family: var(--font-hindi); font-weight: 700; }
         section { padding: 60px 0; }
+        
+        /* --- UPDATED PAGE HEADER STYLE --- */
         .page-header { 
             padding: 80px 0; 
             background-color: var(--primary-red); 
             color: white; 
             text-align: center;
-            /* Background image added here */
+            /* Background image updated here */
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/PRODUCT BACKGROUND.png');
             background-size: cover;
             background-position: center;
-        /* .page-header { padding: 50px 0; background-color: var(--primary-red); color: white; text-align: center;} */
-        .page-header h1 { font-size: 3rem; }
+        }
+        .page-header h1 { 
+            font-size: 3rem;
+            /* Text shadow added for readability against the image */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
+        }
+
         .section-title { text-align: center; font-size: 2.2rem; color: var(--primary-red); margin-bottom: 10px; font-weight: 700; }
         .disclaimer { text-align: center; font-style: italic; font-size: 0.9rem; color: #666; margin-bottom: 40px; }
-        .btn { display: inline-block; padding: 12px 30px; background-color: var(--primary-red); color: white; text-decoration: none; font-family: var(--font-hindi); font-weight: 500; font-size: 1.1rem; border-radius: 5px; transition: background-color 0.3s ease, transform 0.3s ease; }
-        .btn:hover { background-color: #a91a1f; transform: translateY(-2px); }
-
+        
         /* --- Navigation & Header (Same across all pages) --- */
         .main-header { background-color: #ffffff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .main-nav { display: flex; justify-content: space-between; align-items: center; }
@@ -119,50 +124,42 @@
                         <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
                         <h3>क्लासिक तीखा मिक्सचर</h3>
                         <p>A spicy and savory mix for those who love a bit of heat.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                     <article class="product-card">
-                       <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Navratan Mixture">
                         <h3>नवरतन मिक्सचर</h3>
                         <p>A royal blend of nine select ingredients for a rich taste.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                     <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Khatta Meetha">
                         <h3>खट्टा मीठा</h3>
                         <p>The perfect balance of tangy and sweet flavors in a crunchy mix.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                     <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Chatpata Aloo Bhujia">
                         <h3>चटपटा आलू भुजिया</h3>
                         <p>Crispy, flavorful potato noodles with a tangy twist.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                     <!-- Row 2 (New Products) -->
                     <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Moong Dal">
                         <h3>मूंग दाल</h3>
                         <p>Lightly salted and crispy fried moong lentils. A classic favorite.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                      <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Masala Boondi">
                         <h3>मसाला बूंदी</h3>
                         <p>Spicy and crunchy chickpea flour pearls, perfect for raita or snacking.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                     <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Bhavnagri Gathiya">
                         <h3>भावनगरी गठिया</h3>
                         <p>Soft and savory fried chickpea flour strips. A Gujarati specialty.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                      <article class="product-card">
-                        <img src="images/NAVRATAN.png" alt="Shyam Classic Teekha Mixture">
+                        <img src="images/NAVRATAN.png" alt="Shyam Spicy Peanuts">
                         <h3>मसाला मूंगफली</h3>
                         <p>Crunchy peanuts coated in a zesty and spicy gram flour batter.</p>
-                        <a href="#" class="btn">Add to Cart</a>
                     </article>
                 </div>
             </div>

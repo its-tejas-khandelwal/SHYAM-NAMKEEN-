@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shyam Namkeen - The Authentic Taste of Tradition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Global Styles & Variables (Same across all pages) --- */
+        :root {
+            --primary-red: #D42027;
+            --accent-gold: #FFC107;
+            --dark-charcoal: #212121;
+            --bg-warm: #FFF8E1;
+            --font-english: 'Poppins', sans-serif;
+            --font-hindi: 'Hind', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-english); background-color: var(--bg-warm); color: var(--dark-charcoal); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { font-family: var(--font-hindi); font-weight: 700; }
+        section { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary-red); margin-bottom: 10px; font-weight: 700; }
+        .disclaimer { text-align: center; font-style: italic; font-size: 0.9rem; color: #666; margin-bottom: 40px; }
+        .btn { display: inline-block; padding: 12px 30px; background-color: var(--primary-red); color: white; text-decoration: none; font-family: var(--font-hindi); font-weight: 500; font-size: 1.1rem; border-radius: 5px; transition: background-color 0.3s ease, transform 0.3s ease; }
+        .btn:hover { background-color: #a91a1f; transform: translateY(-2px); }
+
+        /* --- Navigation & Header (Same across all pages) --- */
+        .main-header { background-color: #ffffff; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .main-nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { max-height: 50px; z-index: 10; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark-charcoal); font-weight: 500; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-red); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .hamburger { display: none; cursor: pointer; z-index: 10; }
+        .bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--dark-charcoal); }
+
+        /* --- Hero Section --- */
+        .hero { 
+            height: 90vh; 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: var(--bg-warm); /* Changed color to warm off-white */
+            padding: 0 20px; 
+        }
+        .hero-content h1 { 
+            font-size: 3rem; 
+            line-height: 1.2; 
+            margin-bottom: 20px; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Enhanced text shadow */
+        }
+        .hero-content p { 
+            font-size: 1.3rem; 
+            margin-bottom: 30px; 
+            font-family: var(--font-english); 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8); /* Enhanced text shadow */
+        }
+
+        /* --- Bestsellers & Products --- */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .product-card { background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .product-card img { max-width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
+        .product-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark-charcoal); flex-grow: 1; }
+
+        /* --- Promise Section --- */
+        #promise { background-color: #ffffff; }
+        .promise-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .promise-item { text-align: center; }
+        .promise-icon { font-size: 3rem; color: var(--primary-red); margin-bottom: 20px; }
+        .promise-item h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--dark-charcoal); }
+
+        /* --- Promo Section --- */
+        .promo-india { background-image: linear-gradient(rgba(212, 32, 39, 0.85), rgba(212, 32, 39, 0.85)), url('https://images.unsplash.com/photo-1599557049383-51b7b5248554?q=80&w=1974&auto-format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; color: white; text-align: center; }
+        .promo-india .section-title { color: white; }
+        .promo-india p { max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem; line-height: 1.6; }
+        
+        /* --- Footer (Same across all pages) --- */
+        .main-footer { background-color: var(--dark-charcoal); color: #f0f0f0; padding: 60px 0 30px 0; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; }
+        .footer-col h4 { font-family: var(--font-hindi); font-size: 1.4rem; color: white; margin-bottom: 20px; position: relative; padding-bottom: 10px; display: inline-block; }
+        .footer-col h4::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 50px; height: 2px; background-color: var(--primary-red); }
+        .footer-col a, .footer-col p { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-col a:hover { color: white; }
+        .copyright { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #aaa; }
+        .footer-disclaimer { font-style: italic; color: #888; font-size: 0.8rem; margin-top: 15px; }
+
+        /* --- Responsive Design (Same across all pages) --- */
+        @media (min-width: 768px) {
+            .section-title { font-size: 2.5rem; }
+            .hero-content h1 { font-size: 4.5rem; }
+            .hero-content p { font-size: 1.6rem; }
+            .promise-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); text-align: left; }
+            .footer-col h4::after { left: 0; transform: translateX(0); }
+        }
+        @media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (max-width: 767.98px) {
+            .hamburger { display: block; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            .nav-links { position: fixed; left: -100%; top: 70px; gap: 0; flex-direction: column; background-color: #fff; width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 10px rgba(0,0,0,0.1); }
+            .nav-links.active { left: 0; }
+            .nav-links li { padding: 18px 0; border-bottom: 1px solid #f0f0f0; }
+            .nav-links li:last-child { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="container main-nav">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Shyam Namkeen Logo" class="logo">
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Our Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>परंपरा का स्वाद, हर पल के साथ</h1>
+                <p>श्याम नमकीन - क्वालिटी है तभी तो पसंद है।</p>
+                <a href="products.html" class="btn">Explore Our Range</a>
+            </div>
+        </section>
+
+        <section id="bestsellers">
+            <div class="container">
+                <h2 class="section-title">सबसे ज़्यादा पसंद किए जाने वाले</h2>
+                <p class="disclaimer">*Images are for representative purpose only. Actual product may differ.</p>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img src="images/BADSHAH.png" alt="Shyam Classic Teekha Mixture">
+                        <h3>बादशाह मिक्चर</h3>
+                        <!-- <a href="products.html" class="btn">View Details</a> -->
+                    </article>
+                    <article class="product-card">
+                        <img src="images/NAVRATAN.png" alt="Shyam Navratan Mixture">
+                        <h3>नवरतन मिक्चर</h3>
+                        <!-- <a href="products.html" class="btn">View Details</a> -->
+                    </article>
+                    <article class="product-card">
+                        <img src="images/KHATTA MEETHA .png" alt="Shyam Khatta Meetha">
+                        <h3>खट्टा मीठा</h3>
+                        <!-- <a href="products.html" class="btn">View Details</a> -->
+                    </article>
+                    <article class="product-card">
+                        <img src="images/TASTE.png" alt="Shyam Chatpata Aloo Bhujia">
+                        <h3>टेस्टी</h3>
+                        <!-- <a href="products.html" class="btn">View Details</a> -->
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="promise">
+            <div class="container">
+                <h2 class="section-title">हमारा वादा</h2>
+                <div class="promise-grid">
+                    <div class="promise-item">
+                        <div class="promise-icon">🦚</div>
+                        <h3>शुद्धता की पहचान</h3>
+                        <p>We use only the finest, hand-picked ingredients to ensure authentic taste and purity.</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">🌶️</div>
+                        <h3>पारंपरिक मसाले</h3>
+                        <p>Our secret spice blends are family recipes, passed down through generations in our family.</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">👨‍👩‍👧‍👦</div>
+                        <h3>हर घर की पसंद</h3>
+                        <p>For decades, Shyam Namkeen has been a part of your family's celebrations and daily moments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="promo-india" id="promo-india">
+             <div class="container">
+                <h2 class="section-title">भारत का असली स्वाद</h2>
+                <p>भारत के पारंपरिक स्वाद से प्रेरित, श्याम नमकीन आपके लिए लाते हैं जायके का वो खजाना जो पीढ़ियों से दिलों पर राज कर रहा है।</p>
+                <a href="contact.html" class="btn">Wanna Know More <l>
+                    CLICK HERE 
+                </l></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Shyam Namkeen</h4>
+                    <p>Bringing the authentic taste of traditional Indian snacks to every home since 2000. Quality is our recipe.</p>
+                </div>
+                 <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Our Products</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                 <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>Maurya Nagar Patti,Pratapgarh,U.P.</p>
+                    <p>Email: info@shyamnamkeen.com</p>
+                    <p>Phone: +91-94554713710</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <a href="https://www.facebook.com/">Facebook</a>
+                     <a href="https://www.instagram.com">Instagram</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Shyam Namkeen  All Rights Reserved.</p>
+                <p class="footer-disclaimer">Images shown here are representative purpose only and may differ from the actual product.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
